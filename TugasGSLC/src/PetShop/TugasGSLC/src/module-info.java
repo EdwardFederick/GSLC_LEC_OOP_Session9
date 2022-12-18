@@ -1,0 +1,9 @@
+/**
+ * 
+ */
+/**
+ * @author loven
+ *
+ */
+module TugasGSLC {
+}
