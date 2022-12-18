@@ -120,11 +120,11 @@ public class Main {
 		}
 		else if(type.contains("Fish")) {
 			do {
-				System.out.println("Fish Water Type                    :");
+				System.out.println("Fish Water Type[Salt|Fresh]        :");
 				waterType = scan.nextLine();
 			}while(!(waterType.equals("Salt")||waterType.equals("Fresh")));
 			do {
-				System.out.println("Fish Size                          :");
+				System.out.println("Fish Size[Regular|Big|Small]       :");
 				size = scan.nextLine();
 			}while(!(size.equals("Regular")||size.equals("Big")|| size.equals("Small")));
 			Fish F = new Fish(color,type,Bprice,waterType,size);
@@ -132,7 +132,7 @@ public class Main {
 		}
 		else {
 			do {
-				System.out.println("Hamsters Size                          :   ");
+				System.out.println("Hamsters Size[Regular|Big|Small]   :");
 				size = scan.nextLine();
 			}while(!(size.equals("Regular")||size.equals("Big")|| size.equals("Small")));
 			System.out.println("Hamster Weight                        :");
