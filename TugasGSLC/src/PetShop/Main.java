@@ -11,7 +11,7 @@ public class Main {
 	public Main() {
 		// TODO Auto-generated constructor stub
 		int choose = 0 ;
-		do {
+		do {// Membuat menu
 			System.out.println("Amsal Pet Shop");
 			System.out.println("====================");
 			System.out.println("1.View Menu");
@@ -41,11 +41,11 @@ public class Main {
 		if(PetList.isEmpty()) {
 			System.out.println("No Data!!");
 		}
-		else {
+		else {// view menu
 			int counter = 0;
 			System.out.println("Amsal Pet Shops");
 			System.out.println("-------------------------------");
-			for(Pets p : PetList) {
+			for(Pets p : PetList) {// for setiap pet yang ada di list
 				counter++;
 				if (p instanceof Dog) {
 					System.out.println("No " + counter );
@@ -152,7 +152,7 @@ public class Main {
 			System.out.println("-------------------------------");
 			for(Pets p : PetList) {
 				counter++;
-				if (p instanceof Dog) {
+				if (p instanceof Dog) {// jika pet merupakan dog
 					System.out.println("No " + counter );
 					System.out.println("Pet Type      : Dog" );
 					System.out.println("Pet Color     : " + p.getColor());
@@ -161,7 +161,7 @@ public class Main {
 					System.out.println("Price         : " + (((Dog)p).calculatetotalprice()));
 					p.setBprice((((Dog)p).calculatetotalprice()));
 				}
-				else if (p instanceof Cat) {
+				else if (p instanceof Cat) {// jika pet merupakan cat
 					System.out.println("No " + counter );
 					System.out.println("Pet Type      : Cat" );
 					System.out.println("Pet Color     : " + p.getColor());
@@ -170,7 +170,7 @@ public class Main {
 					System.out.println("Price         : " + (((Cat)p).calculatetotalprice()));
 					p.setBprice((((Cat)p).calculatetotalprice()));
 				}
-				else if (p instanceof Fish) {
+				else if (p instanceof Fish) {// jika pet merupakan fish
 					System.out.println("No " + counter );
 					System.out.println("Pet Type      : Fish" );
 					System.out.println("Pet Color     : " + p.getColor());
@@ -179,7 +179,7 @@ public class Main {
 					System.out.println("Price         : " + (((Fish)p).calculatetotalprice()));
 					p.setBprice((((Fish)p).calculatetotalprice()));
 				}
-				else{
+				else{// jika pet merupakan hamsters
 					System.out.println("No " + counter );
 					System.out.println("Pet Type      : Hamsters" );
 					System.out.println("Pet Color     : " + p.getColor());
@@ -191,13 +191,13 @@ public class Main {
 				System.out.println("----------------------------");
 			}
 		}
-		int choose = 0;
+		int choose = 0;// scan pilihan yang dibeli
 		do {
 		System.out.printf("Choose Pet[1-%d]:",PetList.size());
 		choose = scan.nextInt();
 		scan.nextLine();
 		}while(choose<1 || choose>PetList.size());
-		choose--;
+		choose--;// karena index mulai dari 0
 		Pets P = PetList.get(choose);
 		if (P instanceof Dog) {
 			System.out.println("Pet Type      : Dog" );
@@ -228,13 +228,13 @@ public class Main {
 			System.out.println("Price         : " + P.getBprice());
 		}
 		int pay = 0;
-		do {
+		do {// untuk ngecheck apakah payment cukup
 			System.out.print("Payment : ");
 			pay = scan.nextInt();
 			scan.nextLine();
 		}while(pay < P.getBprice());
 		int change = 0;
-		if(pay> P.getBprice()) {
+		if(pay> P.getBprice()) {// mencari kembalian
 			change = pay - P.getBprice();
 		}
 		System.out.println("Change : " + change);
